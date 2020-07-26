@@ -1,0 +1,36 @@
+<%= form_with(model: business, local: true) do |form| %>
+  <% if business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+      <% business.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+      <%= form.label :name, "* Name" %>
+      <%= form.text_field :name, class: "form-control", required: true%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <%= form.label :address, "* Address" %>
+      <%= form.text_field :address, class: "form-control", required: true%>
+    </div>
+
+    <div class="col-lg-6 col-sm-12">
+      <%= form.label :city, "* City" %>
+      <%= form.text_field :city, class: "form-control", required: true%>
+    </div>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit "Save", class: "btn btn-primary", style: "width: 80px !important; height: 40px !important;"  %>
+  </div>
+<% end %>

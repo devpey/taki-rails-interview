@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taki Rails Interview</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.1/d3.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+  <%= render 'layouts/header' %>
+
+  <div class="container">
+    <!-- flash message -->
+    <% if notice.present? %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert.present? %>
+      <p id="alert"><%= alert %></p>
+    <% end %>
+
+
+    <%= yield %>
+  </div>
+
+  <%= render 'layouts/footer' %>
+
+  </body>
+</html>

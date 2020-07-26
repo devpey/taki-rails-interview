@@ -1,0 +1,55 @@
+Started GET "/" for 127.0.0.1 at 2020-07-26 16:54:00 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/items
+Completed 302 Found in 36ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2020-07-26 16:54:00 -0300
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT  "businesses".* FROM "businesses" WHERE "businesses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE (business_id = 1)[0m
+  Rendered items/_table_row.html.erb (1.3ms)
+  Rendered items/_table_row.html.erb (0.3ms)
+  Rendered items/_table_row.html.erb (0.3ms)
+  Rendered items/_table_row.html.erb (0.5ms)
+  Rendered items/_table_row.html.erb (0.4ms)
+  Rendered items/_table_row.html.erb (0.3ms)
+  Rendered items/_table_row.html.erb (0.5ms)
+  Rendered items/_table_row.html.erb (0.4ms)
+  Rendered items/_form.html.erb (7.5ms)
+  Rendered items/index.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1004ms (Views: 948.1ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/assets/application.self-8bffba0331355c2b8bd4d1420a4a2f6d5fc656c483f613d669d7e5a00dec8b53.css?body=1" for 127.0.0.1 at 2020-07-26 16:54:01 -0300
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2020-07-26 16:54:01 -0300
+Started GET "/assets/jquery-ui/widgets/datepicker.self-2af0dec09da99d687c31fc224e940687a4eb3694e7b38b0871bba475cad86120.js?body=1" for 127.0.0.1 at 2020-07-26 16:54:01 -0300
+Started GET "/users/sign_out" for 127.0.0.1 at 2020-07-26 16:54:05 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oog3QH7qW196n2kfgH23hQqlfhIAAoWNlORYUCs6VhZUetf7H6n3UAMc10ePGs7xKeKpoGJXhBVx6DUvqe84aQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-26 16:54:05 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-26 16:54:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 182ms (Views: 180.3ms | ActiveRecord: 0.0ms)
+
+

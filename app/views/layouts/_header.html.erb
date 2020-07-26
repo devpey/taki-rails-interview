@@ -1,0 +1,26 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <a href="/"><h2 class="header-main"><i class="fas fa-shopping-cart"></i> Taki Rails Interview </h2></a>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item"><%= link_to '<i class="fas fa-building"></i> Create Business'.html_safe, new_business_path %></li>
+          <li class="nav-item">          
+            <a href="/users/edit" class="nav-link" data-method="get">
+              <i class="fas fa-user-edit"></i> Edit Profile
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li class="nav-item">
+            <%# link_to "Log out", logout_path, method: "delete" %>
+            <a href="/users/sign_out" " data-method="get">
+              <i class="fas fa-sign-out-alt"></i> Log out
+          </a>
+          </li>
+        </ul>
+      <% end %>
+    </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,50 @@
+<% provide(:title, "Items") %>
+
+<h1>Listing items</h1>
+<table class='table' id='items_table'>
+  <thead>
+    <tr>
+      <th>Item name</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <%# Render table row partial for each person object %>
+      <%= render partial: 'table_row', locals: {item: item} %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_item_modal">
+<i class="fas fa-plus"></i> Add
+</button>
+
+
+
+
+
+  <div id="new_item_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form',item: @item, modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
